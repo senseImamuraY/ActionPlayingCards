@@ -1,16 +1,16 @@
 ﻿using UnityEngine;
-using System.Collections;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 namespace UnityChan
 {
 	[ExecuteInEditMode]
 	public class SplashScreen : MonoBehaviour
 	{
-
-        void NextLevel ()
+		void NextLevel ()
 		{
-			//SceneManager.LoadScene();
+			var activeScene = SceneManager.GetActiveScene();
+			SceneManager.LoadScene(activeScene.buildIndex + 1);
 		}
 	}
 }
