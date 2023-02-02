@@ -8,7 +8,8 @@ public class KillPlayer : MonoBehaviour
     {
         if(other.tag == "Player")
         {
-            other.gameObject.GetComponent<CharacterController>().Move(Vector3.up - other.transform.position);
+            //other.gameObject.GetComponent<CharacterController>().Move(Vector3.up - other.transform.position);
+            LevelManager.instance.Respawn();
         }
     }
 }
