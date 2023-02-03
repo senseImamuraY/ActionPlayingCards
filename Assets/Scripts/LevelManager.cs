@@ -18,13 +18,19 @@ public class LevelManager : MonoBehaviour
 
     private PlayerController player;
 
+    [HideInInspector]
     public Vector3 respawnPoint;
+
+    private CameraController cam;
+
     // Start is called before the first frame update
     void Start()
     {
         player = FindObjectOfType<PlayerController>();
 
         respawnPoint = player.transform.position + Vector3.up;
+
+        cam = FindObjectOfType<CameraController>();
     }
 
     // Update is called once per frame
@@ -47,13 +53,20 @@ public class LevelManager : MonoBehaviour
     public IEnumerator RespawnCo() 
     {
         player.gameObject.SetActive(false);
+        UIController.instance.FadeToBlack();
 
         yield return new WaitForSeconds(waitBeforeRespawning);
 
         player.transform.position = respawnPoint;
 
+        cam.SnapToTarget();
+
         player.gameObject.SetActive(true);
 
         respawning = false;
+
+        UIController.instance.FadeFromBlack();
+
+        PlayerHealthController.instance.FillHealth();
     }   
 }
