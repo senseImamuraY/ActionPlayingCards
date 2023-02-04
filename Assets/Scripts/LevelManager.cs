@@ -23,6 +23,9 @@ public class LevelManager : MonoBehaviour
 
     private CameraController cam;
 
+    [HideInInspector]
+    public float levelTimer;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,7 +39,8 @@ public class LevelManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        levelTimer += Time.deltaTime;
+        UIController.instance.timeText.text = levelTimer.ToString("F1");
     }
 
     public void Respawn() 
