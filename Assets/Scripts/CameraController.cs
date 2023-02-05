@@ -17,7 +17,7 @@ public class CameraController : MonoBehaviour
 
         offset = transform.position;
 
-        Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame

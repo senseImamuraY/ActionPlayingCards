@@ -20,6 +20,8 @@ public class UIController : MonoBehaviour
     public Slider healthSlider;
     public TMP_Text healthText, timeText;
 
+    public TMP_Text coinText;
+
     // Start is called before the first frame update
     void Start()
     {

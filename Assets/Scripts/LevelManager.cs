@@ -26,6 +26,8 @@ public class LevelManager : MonoBehaviour
     [HideInInspector]
     public float levelTimer;
 
+    public int currentCoins;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -73,4 +75,11 @@ public class LevelManager : MonoBehaviour
 
         PlayerHealthController.instance.FillHealth();
     }   
+
+    public void GetCoin()
+    {
+        currentCoins++;
+
+        UIController.instance.coinText.text = currentCoins.ToString();
+    }
 }
