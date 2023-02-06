@@ -15,6 +15,8 @@ public class Title : MonoBehaviour
         {
             firstPush = true;
             Debug.Log("Go to a next log");
+            Time.timeScale = 1f;
+
             SceneManager.LoadScene("SampleScene");
         }
     }
