@@ -22,6 +22,8 @@ public class PlayerController : MonoBehaviour
 
     private bool lastGrounded;
 
+    [SerializeField] private PlayingCardController cardController;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -74,6 +76,11 @@ public class PlayerController : MonoBehaviour
                 moveAmount.y = jumpForce;
                 jumpParticle.SetActive(true);
             }
+        }
+
+        if (Input.GetKeyDown(KeyCode.J))
+        {
+            cardController.CreatePlayingCard();
         }
 
         lastGrounded = charCon.isGrounded;

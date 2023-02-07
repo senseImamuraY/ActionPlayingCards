@@ -99,6 +99,7 @@ public class UIController : MonoBehaviour
     {
         Time.timeScale = 1f;
 
-        SceneManager.LoadScene(mainMenu);
+        SceneManager.LoadScene("titleScene");
+        //SceneManager.LoadScene(mainMenu);
     }
 }
