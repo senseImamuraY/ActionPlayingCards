@@ -20,7 +20,7 @@ public class CameraController : MonoBehaviour
         //Cursor.lockState = CursorLockMode.Confined;
         Cursor.lockState = CursorLockMode.Locked;
     }
-
+    
     // Update is called once per frame
     void Update()
     {
